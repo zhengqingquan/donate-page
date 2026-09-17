@@ -8,14 +8,23 @@
        image/wechat.jpg  微信
        image/alipay.png  支付宝
   */
+  /* tip 按渠道配置：微信赞赏码 / 支付宝收款码文案不同，不靠图片自动识别 */
   var QRCODES = {
-    wechat: { file: 'image/wechat.jpg', name: '微信支付', tool: '微信' },
-    alipay: { file: 'image/alipay.png', name: '支付宝', tool: '支付宝' }
+    wechat: {
+      file: 'image/wechat.jpg',
+      name: '微信打赏',
+      tip: '请使用微信扫一扫下方赞赏码完成打赏'
+    },
+    alipay: {
+      file: 'image/alipay.png',
+      name: '支付宝打赏',
+      tip: '请使用支付宝扫一扫下方二维码完成打赏'
+    }
   };
 
   var modal = document.getElementById('modal');
   var modalTitle = document.getElementById('modal-title');
-  var modalTip = modal.querySelector('.modal-tip strong');
+  var modalTip = modal.querySelector('.modal-tip');
   var qrcodeImg = document.getElementById('modal-qrcode');
   var placeholder = document.getElementById('qrcode-placeholder');
 
@@ -24,7 +33,7 @@
     if (!cfg) return;
 
     modalTitle.textContent = cfg.name;
-    modalTip.textContent = cfg.tool;
+    modalTip.textContent = cfg.tip;
 
     placeholder.hidden = true;
     qrcodeImg.hidden = false;
