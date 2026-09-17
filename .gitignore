@@ -1,0 +1,54 @@
+# Cursor / 本地 Agent 配置
+.cursor/
+
+# 本地备份与原图（勿入库）
+*.local-bak
+*.original.jpg
+*.original.jpeg
+*.original.png
+*.original.webp
+
+# 调试产物
+_dbg_*
+_zoom_*
+image/_dbg_*
+image/_zoom_*
+
+# 本地收款码加工工具（不影响页面展示，暂不入库）
+scripts/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# 运行态 / 抓包 / 测试目录（默认不提交）
+*.pid
+*.har
+har/
+test/
+tmp/
+out/
+.cache/
+
+# 密钥与凭证
+.env
+.env.*
+!.env.example
+credentials.json
+**/secrets.*
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
